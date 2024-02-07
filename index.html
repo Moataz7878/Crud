@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Crud</title>
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="w-75 mx-auto py-4 ">
+      <h3 class="py-2 fw-light">Product Managment System</h3>
+      <div class="container text-center ">
+        <div id="message" class="message   lead w-50">
+        </div>
+      </div>
+
+      <label for="ProductName" class="lead mb-3">Product Name : </label>
+      <input
+        oninput="validationName();"
+        type="text"
+        class="form-control mb-2"
+        name=""
+        id="ProductName"
+      />
+      <div id="ProductNameMassage" class=""></div>
+
+      <label for="ProductPrice" class="lead mb-3">Product Price : </label>
+      <input
+        oninput="validationPrice(); "
+        type="number"
+        class="form-control mb-2"
+        name=""
+        id="ProductPrice"
+      />
+      <div id="ProductPriceMassage" class=""></div>
+      <label for="ProductCategory" class="lead mb-3">Product Category : </label>
+      <input
+      oninput="validationCategory();"
+        type="text"
+        class="form-control mb-2"
+        name=""
+        id="ProductCategory"
+      />
+      <div id="ProductCategoryMassage" class=""></div>
+
+      <label for="ProductDescription" class="lead mb-3"
+        >Product Description :
+      </label>
+      <textarea
+      oninput="validationDesc();"
+        type="text"
+        class="form-control mb-2"
+        name=""
+        id="ProductDescription"
+      ></textarea>
+      <div id="ProductDescMassage" class=""></div>
+
+      <button onclick="addProduct();" type="submit" class="btn btn-info">Add Product</button>
+    </div>
+    <div class="container w-50 lead">
+      <label for="Search">Search:</label>
+      <input
+        oninput="searchProduct(this.value);"
+        type="text"
+        class="form-control mt-2"
+        name="secrch"
+        id="Search"
+      />
+    </div>
+
+    <!-- Table -->
+    <div class="w-75 mx-auto py-5">
+      <table class="table text-center">
+        <thead>
+          <th>index</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
